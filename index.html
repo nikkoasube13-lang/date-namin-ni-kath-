@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffb3cf" />
+  <title>Want to go on a date?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="card">
+
+      <!-- STEP 1: Yes / No -->
+      <section id="step-ask" class="step">
+        <div class="big-emoji" id="ask-emoji">💌</div>
+        <h1>Want to go on a date?</h1>
+        <p class="sub" id="ask-text">No pressure. But Yes is right there.</p>
+        <div class="ask-zone">
+          <button id="yes" class="btn yes">Yes</button>
+          <button id="no" class="btn no" aria-label="No">No</button>
+        </div>
+      </section>
+
+      <!-- STEP 2: Walk or Coffee -->
+      <section id="step-plan" class="step hidden">
+        <div class="big-emoji">🎉</div>
+        <h1>Yay! What sounds good?</h1>
+        <p class="sub">Pick what we'll do.</p>
+        <div class="choices">
+          <button class="choice" data-plan="Walk" data-emoji="🚶">
+            <span class="choice-emoji">🚶</span>
+            <span class="choice-label">Walk</span>
+            <span class="choice-hint">A relaxed stroll</span>
+          </button>
+          <button class="choice" data-plan="Coffee" data-emoji="☕">
+            <span class="choice-emoji">☕</span>
+            <span class="choice-label">Coffee</span>
+            <span class="choice-hint">Coffee and good talk</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STEP 3: You pick the day -->
+      <section id="step-day" class="step hidden">
+        <div class="big-emoji" id="day-emoji">☕</div>
+        <h1 id="day-title">Which date works for you?</h1>
+        <p class="sub">You choose. Pick any date you're free.</p>
+        <div class="calendar" id="calendar" aria-label="Choose a date">
+          <div class="cal-head">
+            <button class="cal-nav" id="prev-month" aria-label="Previous month">&lsaquo;</button>
+            <div class="cal-title" id="cal-title" aria-live="polite"></div>
+            <button class="cal-nav" id="next-month" aria-label="Next month">&rsaquo;</button>
+          </div>
+          <div class="cal-grid cal-weekdays" aria-hidden="true">
+            <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+          </div>
+          <div class="cal-grid" id="cal-days"></div>
+        </div>
+        <button class="link" id="back">Back to change the plan</button>
+      </section>
+
+      <!-- STEP 4: Message -->
+      <section id="step-message" class="step hidden">
+        <div class="big-emoji">✍️</div>
+        <h1>Want to leave a message?</h1>
+        <p class="sub" id="message-sub"></p>
+        <label class="sr-only" for="message">Your message</label>
+        <textarea id="message" rows="4" maxlength="300" placeholder="Write anything you'd like to say (optional)"></textarea>
+        <div class="counter"><span id="count">0</span>/300</div>
+        <button class="btn send" id="send">Send my reply</button>
+        <button class="link" id="back-day">Back to change the date</button>
+      </section>
+
+      <!-- STEP 5: Done -->
+      <section id="step-done" class="step hidden">
+        <div class="big-emoji">💖</div>
+        <h1>It's a date!</h1>
+        <p class="summary" id="summary"></p>
+        <blockquote id="final-message" class="final-message hidden"></blockquote>
+        <p class="sub">Copy your reply and send it to me so I know your answer.</p>
+        <div class="actions">
+          <button class="btn send" id="copy">Copy my reply</button>
+        </div>
+        <p class="copied" id="copied" aria-live="polite"></p>
+        <button class="link" id="reset">Start over</button>
+      </section>
+
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
